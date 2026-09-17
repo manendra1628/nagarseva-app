@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - Pro Worker Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <div class="px-5 pt-3.5 pb-2 flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md z-10 border-b border-amber-900/10">
+            <a href="worker-dashboard.html" class="w-7 h-7 bg-amber-100 border border-amber-900/20 rounded-full flex items-center justify-center text-xs font-bold text-[#3B2922]">
+                ←
+            </a>
+            <h1 class="text-sm font-serif font-bold text-[#3B2922] tracking-tight">Worker <span class="text-amber-800">Credentials</span></h1>
+            <div class="w-7 h-7 bg-amber-100/60 border border-amber-900/20 rounded-full flex items-center justify-center shadow-sm">
+                <span class="text-xs">🛡️</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-4 overflow-y-auto hide-scrollbar space-y-3.5 py-3 flex-grow">
+            
+            <!-- Worker Header Banner -->
+            <div class="bg-gradient-to-r from-[#3B2922] to-[#5a3f35] text-white p-4 rounded-3xl shadow-lg text-center relative overflow-hidden space-y-2">
+                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl"></div>
+                
+                <div class="w-16 h-16 rounded-full bg-amber-200 text-[#3B2922] flex items-center justify-center font-black text-xl mx-auto shadow-inner border-2 border-amber-400">
+                    VS
+                </div>
+                
+                <div class="relative z-10 space-y-1">
+                    <h2 class="text-sm font-bold tracking-tight">Vikram Singh</h2>
+                    <p class="text-[10px] text-amber-200">Master Plumber & Municipal Civic Partner</p>
+                    <span class="inline-block text-[8px] bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded">🛡️ Police Verified & 100% Safe</span>
+                </div>
+            </div>
+
+            <!-- ONLINE / OFFLINE TOGGLE CARD -->
+            <div class="bg-white border border-amber-900/15 rounded-2xl p-3.5 shadow-sm flex items-center justify-between">
+                <div>
+                    <h3 class="text-xs font-bold text-[#3B2922]">Duty Status</h3>
+                    <p id="status-desc" class="text-[10px] text-slate-500">You are currently online & receiving requests.</p>
+                </div>
+                <button id="duty-btn" onclick="toggleDutyStatus()" class="px-3.5 py-1.5 bg-emerald-800 text-white font-bold text-xs rounded-xl shadow transition">
+                    🟢 ONLINE
+                </button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="bg-white p-2.5 rounded-2xl border border-amber-900/15 shadow-sm">
+                    <p class="text-[9px] text-slate-400 uppercase font-bold">Experience</p>
+                    <p class="font-black text-xs text-[#3B2922] mt-0.5">6+ Years</p>
+                </div>
+                <div class="bg-white p-2.5 rounded-2xl border border-amber-900/15 shadow-sm">
+                    <p class="text-[9px] text-slate-400 uppercase font-bold">Completed</p>
+                    <p class="font-black text-xs text-emerald-700 mt-0.5">1,240 Jobs</p>
+                </div>
+                <div class="bg-white p-2.5 rounded-2xl border border-amber-900/15 shadow-sm">
+                    <p class="text-[9px] text-slate-400 uppercase font-bold">Rating</p>
+                    <p class="font-black text-xs text-amber-700 mt-0.5">★ 4.9 / 5</p>
+                </div>
+            </div>
+
+            <!-- Verification & Badge Details -->
+            <div class="bg-white border border-amber-900/15 rounded-2xl p-3.5 shadow-sm space-y-2 text-xs">
+                <h3 class="text-xs font-bold text-[#3B2922] uppercase tracking-wider border-b border-slate-100 pb-1">Cooperative Credentials</h3>
+                <div class="space-y-1.5 text-[10px] text-slate-600">
+                    <p>🆔 <strong>Aadhaar KYC:</strong> Verified via DigiLocker</p>
+                    <p>📜 <strong>Background Check:</strong> Chhattisgarh Police Clearance No. #CG-POL-9821</p>
+                    <p>📍 <strong>Assigned Ward:</strong> Sector 6 & Smriti Nagar, Bhilai</p>
+                    <p>⚡ <strong>Zero Commission Tier:</strong> Direct Payout Cooperative Member</p>
+                </div>
+            </div>
+
+            <!-- LOGOUT / SWITCH ROLE BUTTON -->
+            <div class="pt-1">
+                <a href="login.html" onclick="localStorage.removeItem('nagarSevaRole'); return confirm('Are you sure you want to log out and switch role?')" class="block w-full py-2.5 bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-900/20 rounded-xl font-bold text-xs text-center shadow-sm transition">
+                    🚪 Log Out & Switch Role (Citizen / Worker)
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer Back Button -->
+        <div class="bg-white border-t border-amber-900/10 px-4 py-2.5 z-10 shadow-lg">
+            <a href="worker-dashboard.html" class="block w-full py-2.5 bg-[#3B2922] text-white text-center font-bold text-xs rounded-xl shadow-lg transition">
+                Back to Dashboard ➔
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        let isOnline = true;
+
+        function toggleDutyStatus() {
+            isOnline = !isOnline;
+            const btn = document.getElementById('duty-btn');
+            const desc = document.getElementById('status-desc');
+
+            if (isOnline) {
+                btn.className = "px-3.5 py-1.5 bg-emerald-800 text-white font-bold text-xs rounded-xl shadow transition";
+                btn.innerText = "🟢 ONLINE";
+                desc.innerText = "You are currently online & receiving requests.";
+                alert("✓ You are now Online. New emergency requests will be dispatched to you.");
+            } else {
+                btn.className = "px-3.5 py-1.5 bg-slate-400 text-white font-bold text-xs rounded-xl shadow transition";
+                btn.innerText = "🔴 OFFLINE";
+                desc.innerText = "You are offline. No new requests will be received.";
+                alert("💤 You are now Offline. Rest well!");
+            }
+        }
+    </script>
+</body>
+</html>

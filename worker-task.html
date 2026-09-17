@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - Active Task Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <div class="px-5 pt-3.5 pb-2 flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md z-10 border-b border-amber-900/10">
+            <a href="worker-dashboard.html" class="w-7 h-7 bg-amber-100 border border-amber-900/20 rounded-full flex items-center justify-center text-xs font-bold text-[#3B2922]">
+                ←
+            </a>
+            <h1 class="text-sm font-serif font-bold text-[#3B2922] tracking-tight">Active <span class="text-amber-800">Task Dispatch</span></h1>
+            <div class="w-7 h-7 bg-amber-100/60 border border-amber-900/20 rounded-full flex items-center justify-center shadow-sm">
+                <span class="text-xs">📍</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-4 overflow-y-auto hide-scrollbar space-y-3.5 py-3 flex-grow">
+            
+            <!-- Status Banner -->
+            <div class="bg-emerald-800 text-white p-3 rounded-2xl shadow-md text-center space-y-0.5">
+                <span class="text-[9px] bg-emerald-950 text-emerald-300 font-black px-2 py-0.5 rounded uppercase">✓ Job Accepted & En Route</span>
+                <h2 id="task-title" class="text-sm font-bold mt-1">Severe Water Pipe Burst & Flooding</h2>
+            </div>
+
+            <!-- Client & Contact Details Card -->
+            <div class="bg-white border border-amber-900/15 rounded-2xl p-3.5 shadow-sm space-y-2.5 text-xs">
+                <h3 class="text-xs font-bold text-[#3B2922] uppercase tracking-wider border-b border-slate-100 pb-1">Client & Location Details</h3>
+                
+                <div class="space-y-1.5 text-[11px]">
+                    <p>👤 <strong>Client Name:</strong> <span id="task-client" class="text-slate-700 font-bold">Amit Verma</span></p>
+                    <p>📞 <strong>Phone Number:</strong> <span id="task-phone" class="text-amber-900 font-bold">+91 98271 11223</span></p>
+                    <p>📍 <strong>Service Address:</strong> <span id="task-address" class="text-slate-700">Sector 4, Street 12, Bhilai</span></p>
+                    <p>💰 <strong>Estimated Payout:</strong> <span id="task-price" class="text-emerald-700 font-black text-sm">₹750</span></p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 pt-1">
+                    <a id="call-link" href="tel:+919827111223" class="py-2 bg-amber-100 text-amber-900 border border-amber-900/20 rounded-xl font-bold text-center shadow-sm">
+                        📞 Call Client
+                    </a>
+                    <a href="https://maps.google.com/?q=Bhilai+Chhattisgarh" target="_blank" class="py-2 bg-emerald-800 text-white rounded-xl font-bold text-center shadow-sm animate-pulse">
+                        Track Map 🗺️
+                    </a>
+                </div>
+            </div>
+
+            <!-- Issue Description & Photo Reference -->
+            <div class="bg-white border border-amber-900/15 rounded-2xl p-3.5 shadow-sm space-y-2 text-xs">
+                <h3 class="text-xs font-bold text-[#3B2922] uppercase tracking-wider border-b border-slate-100 pb-1">Problem Description</h3>
+                <p id="task-desc" class="text-[11px] text-slate-700 leading-relaxed bg-amber-50/60 p-2.5 rounded-xl border border-amber-900/10">
+                    Main supply pipe cracked under bathroom sink, water overflowing rapidly. Photo attached by citizen.
+                </p>
+                
+                <div class="border-2 border-dashed border-amber-900/20 rounded-xl p-2 text-center bg-amber-50/30">
+                    <span class="text-xs text-slate-500 font-bold">📸 Citizen Issue Photo Attached</span>
+                </div>
+            </div>
+
+            <!-- Secure OTP Verification & Complete Task -->
+            <div class="bg-white border border-amber-900/15 rounded-2xl p-3.5 shadow-sm space-y-3 text-center">
+                <div class="space-y-0.5">
+                    <p class="text-[10px] text-slate-500 uppercase font-bold">Enter Citizen OTP to Complete Job</p>
+                    <p class="text-xs font-mono font-bold text-amber-900">Ask client for 4-digit verification code</p>
+                </div>
+                
+                <div class="flex justify-center space-x-2">
+                    <input type="text" maxlength="1" value="8" class="w-10 h-10 text-center text-base font-bold bg-slate-50 border border-amber-900/20 rounded-xl">
+                    <input type="text" maxlength="1" value="4" class="w-10 h-10 text-center text-base font-bold bg-slate-50 border border-amber-900/20 rounded-xl">
+                    <input type="text" maxlength="1" value="1" class="w-10 h-10 text-center text-base font-bold bg-slate-50 border border-amber-900/20 rounded-xl">
+                    <input type="text" maxlength="1" value="2" class="w-10 h-10 text-center text-base font-bold bg-slate-50 border border-amber-900/20 rounded-xl">
+                </div>
+
+                <button onclick="alert('✅ Task Verified & Completed Successfully! Payout added to wallet.'); window.location.href='worker-dashboard.html';" class="w-full py-2.5 bg-[#3B2922] hover:bg-[#5a3f35] text-white font-bold text-xs rounded-xl shadow-lg transition">
+                    Verify OTP & Complete Task ➔
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Footer Back Bar -->
+        <div class="bg-white border-t border-amber-900/10 px-4 py-2.5 z-10 shadow-lg">
+            <a href="worker-dashboard.html" class="block w-full py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-center font-bold text-xs rounded-xl transition border border-slate-300">
+                ← Back to Dashboard
+            </a>
+        </div>
+
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if(params.get('title')) {
+            document.getElementById('task-title').innerText = params.get('title');
+            document.getElementById('task-client').innerText = params.get('client');
+            document.getElementById('task-phone').innerText = params.get('phone');
+            document.getElementById('task-address').innerText = params.get('address');
+            document.getElementById('task-desc').innerText = params.get('desc');
+            document.getElementById('task-price').innerText = params.get('price');
+            document.getElementById('call-link').href = 'tel:' + params.get('phone');
+        }
+    </script>
+</body>
+</html>

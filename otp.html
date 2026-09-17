@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - Verify OTP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <div class="px-5 pt-3.5 pb-2 flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md z-10 border-b border-amber-900/10">
+            <a href="login.html" class="w-7 h-7 bg-amber-100 border border-amber-900/20 rounded-full flex items-center justify-center text-xs font-bold text-[#3B2922]">
+                ←
+            </a>
+            <h1 class="text-sm font-serif font-bold text-[#3B2922] tracking-tight">OTP <span class="text-amber-800">Verification</span></h1>
+            <div class="w-7 h-7 bg-amber-100/60 border border-amber-900/20 rounded-full flex items-center justify-center shadow-sm">
+                <span class="text-xs">🔒</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-5 overflow-y-auto hide-scrollbar space-y-4 py-6 flex-grow flex flex-col justify-center">
+            
+            <div class="space-y-1 text-center">
+                <h2 class="text-base font-bold text-[#3B2922]">Enter 4-Digit Verification Code</h2>
+                <p class="text-[10px] text-slate-500">We have sent a secure OTP to your registered mobile number.</p>
+            </div>
+
+            <!-- OTP Input Boxes -->
+            <div class="bg-white border border-amber-900/15 rounded-3xl p-5 shadow-sm space-y-4 text-center">
+                
+                <div class="flex justify-center space-x-3">
+                    <input type="text" maxlength="1" value="4" class="w-12 h-12 text-center text-lg font-bold bg-slate-50 border border-amber-900/20 rounded-xl focus:outline-none focus:border-[#3B2922]">
+                    <input type="text" maxlength="1" value="8" class="w-12 h-12 text-center text-lg font-bold bg-slate-50 border border-amber-900/20 rounded-xl focus:outline-none focus:border-[#3B2922]">
+                    <input type="text" maxlength="1" value="9" class="w-12 h-12 text-center text-lg font-bold bg-slate-50 border border-amber-900/20 rounded-xl focus:outline-none focus:border-[#3B2922]">
+                    <input type="text" maxlength="1" value="1" class="w-12 h-12 text-center text-lg font-bold bg-slate-50 border border-amber-900/20 rounded-xl focus:outline-none focus:border-[#3B2922]">
+                </div>
+
+                <p class="text-[10px] text-slate-400">Resend OTP in <span class="text-amber-800 font-bold">24s</span></p>
+
+                <button onclick="verifyOTP()" class="w-full py-2.5 bg-[#3B2922] hover:bg-[#5a3f35] text-white font-bold text-xs rounded-xl shadow-lg transition">
+                    Verify & Proceed ➔
+                </button>
+            </div>
+
+            <div class="text-center">
+                <p class="text-[9px] text-slate-400">Secure Municipal Authentication Gateway</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="bg-white border-t border-amber-900/10 px-4 py-3 text-center z-10 shadow-lg">
+            <p class="text-[10px] text-slate-500">Wrong number? <a href="login.html" class="text-amber-800 font-bold underline">Change Number</a></p>
+        </div>
+
+    </div>
+
+    <script>
+        function verifyOTP() {
+            // Read role stored during login selection
+            const role = localStorage.getItem('nagarSevaRole') || 'citizen';
+            
+            alert('✓ OTP Verified Successfully!');
+            
+            if(role === 'worker') {
+                window.location.href = 'worker-dashboard.html';
+            } else {
+                window.location.href = 'dashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>

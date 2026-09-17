@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - Worker Earnings & Wallet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <div class="px-5 pt-3.5 pb-2 flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md z-10 border-b border-amber-900/10">
+            <a href="worker-dashboard.html" class="w-7 h-7 bg-amber-100 border border-amber-900/20 rounded-full flex items-center justify-center text-xs font-bold text-[#3B2922]">
+                ←
+            </a>
+            <h1 class="text-sm font-serif font-bold text-[#3B2922] tracking-tight">Earnings & <span class="text-amber-800">Wallet</span></h1>
+            <div class="w-7 h-7 bg-amber-100/60 border border-amber-900/20 rounded-full flex items-center justify-center shadow-sm">
+                <span class="text-xs">💰</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-4 overflow-y-auto hide-scrollbar space-y-3.5 py-3 flex-grow">
+            
+            <!-- Wallet Balance Card -->
+            <div class="bg-[#3B2922] text-[#FAF8F5] p-4 rounded-3xl shadow-lg text-center relative overflow-hidden space-y-2">
+                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-amber-500/10 rounded-full blur-xl"></div>
+                <p class="text-[9px] text-amber-200 uppercase tracking-widest font-bold">Total Available Balance (0% Commission)</p>
+                <h2 class="text-2xl font-black text-amber-400">₹8,450.00</h2>
+                <button onclick="alert('🏦 Payout transferred directly to your Bank Account via UPI!')" class="py-2 px-6 bg-amber-500 hover:bg-amber-400 text-[#3B2922] font-black text-xs rounded-xl shadow transition">
+                    Instant Bank Transfer ➔
+                </button>
+            </div>
+
+            <!-- AI Earnings Forecaster -->
+            <div class="bg-white border-2 border-amber-800/40 rounded-2xl p-3.5 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-[9px] bg-amber-100 text-amber-900 font-extrabold px-1.5 py-0.5 rounded">🤖 AI Payout Predictor</span>
+                    <span class="text-[9px] text-emerald-700 font-bold">High Demand</span>
+                </div>
+                <p class="text-[10px] text-slate-600 leading-tight">
+                    Predicted weekend surge in Sector 7 & Smriti Nagar. Estimated potential earnings: <strong class="text-[#3B2922]">₹3,200</strong>.
+                </p>
+            </div>
+
+            <!-- Recent Payout Transactions -->
+            <div class="bg-white border border-amber-900/15 rounded-2xl p-3.5 shadow-sm space-y-2 text-xs">
+                <h3 class="text-xs font-bold text-[#3B2922] uppercase tracking-wider border-b border-slate-100 pb-1">Recent Settlement History</h3>
+                
+                <div class="space-y-2 text-[10px]">
+                    <div class="flex justify-between items-center pb-1.5 border-b border-slate-100">
+                        <div>
+                            <p class="font-bold text-[#3B2922]">Direct Escrow Settlement</p>
+                            <p class="text-slate-400 text-[9px]">Today, 02:00 PM</p>
+                        </div>
+                        <span class="font-black text-emerald-700">+₹1,450.00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pb-1.5 border-b border-slate-100">
+                        <div>
+                            <p class="font-bold text-[#3B2922]">Weekly Municipal Bonus</p>
+                            <p class="text-slate-400 text-[9px]">June 12, 2026</p>
+                        </div>
+                        <span class="font-black text-emerald-700">+₹1,000.00</span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-bold text-[#3B2922]">Emergency Surge Payout</p>
+                            <p class="text-slate-400 text-[9px]">June 04, 2026</p>
+                        </div>
+                        <span class="font-black text-emerald-700">+₹750.00</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Worker Bottom Navigation (Consistent with AI Helper) -->
+        <div class="bg-white border-t border-amber-900/10 px-2 py-2 flex justify-between items-center z-10 shadow-lg text-[10px] font-bold text-[#3B2922]">
+            <span class="text-slate-400 cursor-pointer" onclick="window.location.href='worker-dashboard.html'">Live Jobs</span>
+            <span class="text-slate-400 cursor-pointer" onclick="window.location.href='worker-history.html'">History</span>
+            <span class="text-slate-400 cursor-pointer" onclick="window.location.href='worker-ml.html'">🤖 AI Helper</span>
+            <span class="text-amber-800 bg-amber-100 px-2 py-1 rounded-lg border border-amber-300">Earnings</span>
+        </div>
+
+    </div>
+</body>
+</html>

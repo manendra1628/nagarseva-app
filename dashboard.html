@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - Citizen Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-hover { transition: all 0.2s ease; }
+        .card-hover:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top Location & Brand Bar -->
+        <div class="px-5 pt-3.5 pb-2 flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md z-10 border-b border-amber-900/10">
+            <div>
+                <p class="text-[8px] text-slate-500 font-medium flex items-center space-x-0.5">
+                    <span>📍</span> <span>Current Location</span>
+                </p>
+                <h2 class="text-xs font-bold text-[#3B2922]">Bhilai, Chhattisgarh</h2>
+            </div>
+            <h1 class="text-base font-serif font-bold text-[#3B2922] tracking-tight">Nagar<span class="text-amber-800">SEVA</span></h1>
+            <div class="w-7 h-7 bg-amber-100/60 border border-amber-900/20 rounded-full flex items-center justify-center shadow-sm cursor-pointer" onclick="alert('🔔 2 New Municipal Alerts Active.')">
+                <span class="text-xs">🔔</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-4 overflow-y-auto hide-scrollbar space-y-3 py-2 flex-grow">
+            
+            <!-- Greeting & Search Bar -->
+            <div class="space-y-1.5">
+                <div>
+                    <h2 class="text-lg font-bold text-[#3B2922]">Hello, Rahul 👋</h2>
+                    <p class="text-[10px] text-slate-500">What daily service or civic help do you need?</p>
+                </div>
+                
+                <!-- Search Box -->
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 text-xs">🔍</span>
+                    <input type="text" placeholder="Search plumbers, electricians, carpentry..." class="w-full pl-9 pr-3 py-2 bg-white border border-amber-900/15 rounded-xl text-xs text-slate-800 placeholder-slate-400 shadow-sm focus:outline-none focus:border-[#3B2922]">
+                </div>
+            </div>
+
+            <!-- 🌟 HIGHLIGHTED ANIMAL RESCUE SOS BOX -->
+            <div class="bg-gradient-to-r from-rose-950 via-rose-900 to-[#3B2922] text-white p-3 rounded-2xl shadow-md relative overflow-hidden flex items-center justify-between card-hover border border-rose-700/40">
+                <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-rose-500/20 rounded-full blur-xl"></div>
+                <div class="space-y-0.5 relative z-10">
+                    <div class="flex items-center space-x-1.5">
+                        <span class="bg-rose-600 text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded uppercase animate-pulse">🚨 EMERGENCY SOS</span>
+                        <span class="text-[9px] text-amber-200 font-bold">24/7 Active</span>
+                    </div>
+                    <h3 class="text-xs font-bold mt-0.5">Stray Animal Emergency Rescue</h3>
+                    <p class="text-[9px] text-rose-100/80">Instant dispatch to municipal animal welfare unit</p>
+                </div>
+                <a href="category.html?cat=animalsos" class="px-3 py-2 bg-amber-500 hover:bg-amber-400 text-[#3B2922] font-black text-[10px] rounded-xl shadow transition shrink-0 relative z-10">
+                    SOS HELP ➔
+                </a>
+            </div>
+
+            <!-- Daily Essential Categories Grid (8 True Utilities) -->
+            <div>
+                <div class="grid grid-cols-4 gap-2">
+                    <a href="category.html?cat=plumbing" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">🔧</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Plumbing</span>
+                    </a>
+                    <a href="category.html?cat=electrical" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">⚡</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Electrical</span>
+                    </a>
+                    <a href="category.html?cat=cleaning" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">🧹</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Cleaning</span>
+                    </a>
+                    <a href="category.html?cat=watertank" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">🚰</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Water Tank</span>
+                    </a>
+                    <a href="category.html?cat=animalsos" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-rose-50 rounded-full flex items-center justify-center text-xs">🐾</div>
+                        <span class="text-[9px] font-bold text-rose-800 block truncate">Animal SOS</span>
+                    </a>
+                    <a href="category.html?cat=sanitation" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">🚯</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Sanitation</span>
+                    </a>
+                    <a href="category.html?cat=carpenter" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">🧰</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Carpenter</span>
+                    </a>
+                    <a href="category.html?cat=painting" class="bg-white border border-amber-900/10 rounded-2xl p-2 text-center space-y-1 shadow-sm card-hover">
+                        <div class="w-8 h-8 mx-auto bg-amber-50 rounded-full flex items-center justify-center text-xs">🎨</div>
+                        <span class="text-[9px] font-bold text-[#3B2922] block truncate">Painting</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recommended for You Section (VERTICAL STACK) -->
+            <div class="space-y-2 pb-2">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xs font-bold text-[#3B2922] uppercase tracking-wider">Recommended For You (Top Rated)</h3>
+                    <span class="text-[10px] text-amber-800 font-bold">Verified</span>
+                </div>
+
+                <!-- Vertical Cards List -->
+                <div class="space-y-2">
+                    
+                    <!-- Partner 1 -->
+                    <div class="bg-white border border-amber-900/15 rounded-2xl p-3 shadow-sm flex items-center justify-between card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-200 to-amber-300 text-[#3B2922] flex items-center justify-center font-black text-xs shadow-inner">
+                                VS
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-[#3B2922]">Vikram Singh • Electrician</h4>
+                                <p class="text-[10px] text-slate-500">MCB, Wiring & Inverter Fix • ★ 4.9</p>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="px-3 py-1.5 bg-[#3B2922] text-[#FAF8F5] text-[10px] font-bold rounded-xl shadow">Book</a>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="bg-white border border-amber-900/15 rounded-2xl p-3 shadow-sm flex items-center justify-between card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-200 to-amber-300 text-[#3B2922] flex items-center justify-center font-black text-xs shadow-inner">
+                                PS
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-[#3B2922]">Priya Sharma • Master Plumber</h4>
+                                <p class="text-[10px] text-slate-500">Pipe Leak, Taps & Tank • ★ 5.0</p>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="px-3 py-1.5 bg-[#3B2922] text-[#FAF8F5] text-[10px] font-bold rounded-xl shadow">Book</a>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="bg-white border border-amber-900/15 rounded-2xl p-3 shadow-sm flex items-center justify-between card-hover">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-200 to-amber-300 text-[#3B2922] flex items-center justify-center font-black text-xs shadow-inner">
+                                ST
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-[#3B2922]">Santosh Thakur • Carpenter</h4>
+                                <p class="text-[10px] text-slate-500">Door Locks, Woodwork & Beds • ★ 4.9</p>
+                            </div>
+                        </div>
+                        <a href="booking.html" class="px-3 py-1.5 bg-[#3B2922] text-[#FAF8F5] text-[10px] font-bold rounded-xl shadow">Book</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 5-Tab Bottom Navigation Bar -->
+        <div class="bg-white border-t border-amber-900/10 px-3 py-2 flex justify-between items-center z-10 shadow-lg">
+            <a href="dashboard.html" class="flex flex-col items-center text-[#3B2922]">
+                <span class="text-base">🏠</span>
+                <span class="text-[9px] font-extrabold mt-0.5">Home</span>
+            </a>
+            <a href="category.html?cat=plumbing" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition">
+                <span class="text-base">🛠️</span>
+                <span class="text-[9px] font-medium mt-0.5">Services</span>
+            </a>
+            <a href="role-select.html" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition" title="Smart ML Match">
+                <span class="text-base">🤖</span>
+                <span class="text-[9px] font-medium mt-0.5">ML Match</span>
+            </a>
+            <a href="booking.html" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition">
+                <span class="text-base">📅</span>
+                <span class="text-[9px] font-medium mt-0.5">Bookings</span>
+            </a>
+            <a href="profile.html" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition">
+                <span class="text-base">👤</span>
+                <span class="text-[9px] font-medium mt-0.5">Profile</span>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

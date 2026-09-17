@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - My Bookings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-hover { transition: all 0.2s ease; }
+        .card-hover:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <div class="px-5 pt-3.5 pb-2 flex items-center justify-between bg-[#FAF8F5]/90 backdrop-blur-md z-10 border-b border-amber-900/10">
+            <a href="dashboard.html" class="w-7 h-7 bg-amber-100 border border-amber-900/20 rounded-full flex items-center justify-center text-xs font-bold text-[#3B2922]">
+                ←
+            </a>
+            <h1 class="text-sm font-serif font-bold text-[#3B2922] tracking-tight">My <span class="text-amber-800">Bookings</span></h1>
+            <div class="w-7 h-7 bg-amber-100/60 border border-amber-900/20 rounded-full flex items-center justify-center shadow-sm">
+                <span class="text-xs">📅</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-4 overflow-y-auto hide-scrollbar space-y-3.5 py-3 flex-grow">
+            
+            <!-- Tabs (Active / History) -->
+            <div class="flex bg-amber-100/60 p-1 rounded-xl text-xs font-bold text-center">
+                <div id="tab-active" onclick="switchTab('active')" class="w-1/2 py-1.5 bg-white text-[#3B2922] rounded-lg shadow-sm cursor-pointer transition">Active Bookings</div>
+                <div id="tab-history" onclick="switchTab('history')" class="w-1/2 py-1.5 text-slate-500 hover:text-[#3B2922] cursor-pointer transition">History (4)</div>
+            </div>
+
+            <!-- ACTIVE BOOKINGS CONTAINER -->
+            <div id="container-active" class="space-y-3">
+                
+                <!-- Dynamic Booked Worker (Injected via JS from payment/checkout) -->
+                <div id="dynamic-booking-card" class="bg-white border-2 border-amber-800/40 rounded-2xl p-3 shadow-sm space-y-2 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2.5">
+                            <div id="bk-initials" class="w-10 h-10 rounded-xl bg-amber-100 text-[#3B2922] flex items-center justify-center font-black text-xs shadow-inner border border-amber-900/20">
+                                VS
+                            </div>
+                            <div>
+                                <span class="text-[8px] bg-amber-600 text-white font-extrabold px-1.5 py-0.5 rounded">⚡ Just Dispatched</span>
+                                <h4 id="bk-name" class="text-xs font-bold text-[#3B2922] mt-0.5">Vikram Singh</h4>
+                                <p id="bk-role" class="text-[10px] text-slate-500">Senior Wiring & MCB Expert</p>
+                            </div>
+                        </div>
+                        <span id="bk-price" class="text-xs font-black text-[#3B2922]">₹450</span>
+                    </div>
+
+                    <div class="bg-amber-50/80 p-2 rounded-xl border border-amber-900/10 flex items-center justify-between text-[10px]">
+                        <span class="text-slate-700 font-medium">📍 Status: <strong class="text-emerald-800">Live GPS Tracking Active</strong></span>
+                        <a href="https://maps.google.com/?q=Bhilai+Chhattisgarh" target="_blank" class="px-3 py-1 bg-emerald-800 hover:bg-emerald-900 text-white font-bold rounded-lg shadow animate-pulse">
+                            Track 🗺️
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] pt-1 border-t border-slate-100 text-slate-500">
+                        <span>Booked Just Now • Escrow Secured</span>
+                        <div class="space-x-1">
+                            <button onclick="alert('📞 Calling expert securely via NagarSeva VoIP...')" class="px-2.5 py-1 bg-amber-50 text-amber-900 border border-amber-900/20 rounded-lg font-bold">Call</button>
+                            <button onclick="alert('❌ Cancellation window closed as expert is already en route.')" class="px-2.5 py-1 bg-rose-50 text-rose-800 border border-rose-900/20 rounded-lg font-bold">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Booking Card 2: Animal Rescue SOS Ticket -->
+                <div class="bg-white border border-rose-800/30 rounded-2xl p-3 shadow-sm space-y-2 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2.5">
+                            <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center font-black text-sm shadow-inner border border-rose-900/20">
+                                🐾
+                            </div>
+                            <div>
+                                <span class="text-[8px] bg-rose-600 text-white font-extrabold px-1.5 py-0.5 rounded">🚨 Municipal SOS</span>
+                                <h4 class="text-xs font-bold text-[#3B2922] mt-0.5">Stray Animal Rescue Unit</h4>
+                                <p class="text-[10px] text-slate-500">Sector 7 Stray Support Wing</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-black text-rose-800">Free</span>
+                    </div>
+
+                    <div class="bg-rose-50/60 p-2 rounded-xl border border-rose-900/10 text-[10px]">
+                        <span class="text-slate-700 font-medium">Status: <strong class="text-rose-800">Rescue Van Dispatched (En Route)</strong></span>
+                        <p class="text-[9px] text-slate-500 mt-0.5">Ticket ID: #NS-9421 • ETA: 12 Mins</p>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] pt-1 border-t border-slate-100 text-slate-500">
+                        <span>Booked Today, 09:15 AM</span>
+                        <button onclick="alert('ℹ️ Rescue unit leader contact: +91 94251 XXXXX')" class="px-3 py-1 bg-[#3B2922] text-white rounded-lg font-bold">Details</button>
+                    </div>
+                </div>
+
+                <!-- Active Booking Card 3: Municipal Water Tanker -->
+                <div class="bg-white border border-amber-900/15 rounded-2xl p-3 shadow-sm space-y-2 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2.5">
+                            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-black text-sm shadow-inner border border-amber-900/20">
+                                🚰
+                            </div>
+                            <div>
+                                <span class="text-[8px] bg-amber-700 text-white font-extrabold px-1.5 py-0.5 rounded">Municipal Tanker</span>
+                                <h4 class="text-xs font-bold text-[#3B2922] mt-0.5">Ramesh Mishra (5000L)</h4>
+                                <p class="text-[10px] text-slate-500">Emergency Water Supply Wing</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-black text-[#3B2922]">₹500</span>
+                    </div>
+
+                    <div class="bg-amber-50/60 p-2 rounded-xl border border-amber-900/10 text-[10px]">
+                        <span class="text-slate-700 font-medium">Status: <strong class="text-amber-800">Tanker Loaded & Leaving Depot</strong></span>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] pt-1 border-t border-slate-100 text-slate-500">
+                        <span>Booked Today, 11:00 AM</span>
+                        <a href="https://maps.google.com/?q=Bhilai+Chhattisgarh" target="_blank" class="px-3 py-1 bg-amber-900 text-white rounded-lg font-bold">Track Tanker</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HISTORY CONTAINER (Hidden by default) -->
+            <div id="container-history" class="space-y-2.5 hidden">
+                
+                <!-- History Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm space-y-1.5 opacity-90">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">PS</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-800">Priya Sharma • Plumber</h4>
+                                <p class="text-[9px] text-slate-400">Completed on June 12, 2026</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700">★ 5.0 Paid</span>
+                    </div>
+                    <p class="text-[9px] text-slate-500 bg-slate-50 p-1.5 rounded-lg">Fixed bathroom pipe leakage cleanly. Zero middleman fee cooperative service.</p>
+                </div>
+
+                <!-- History Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm space-y-1.5 opacity-90">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">AY</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-800">Abhay Yadav • Electrician</h4>
+                                <p class="text-[9px] text-slate-400">Completed on May 28, 2026</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700">★ 4.8 Paid</span>
+                    </div>
+                    <p class="text-[9px] text-slate-500 bg-slate-50 p-1.5 rounded-lg">Replaced burnt main MCB switchboard safely.</p>
+                </div>
+
+                <!-- History Item 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm space-y-1.5 opacity-90">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">SN</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-800">Sunita Nair • Cleaning</h4>
+                                <p class="text-[9px] text-slate-400">Completed on May 10, 2026</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700">★ 4.9 Paid</span>
+                    </div>
+                    <p class="text-[9px] text-slate-500 bg-slate-50 p-1.5 rounded-lg">Full home deep sanitization and kitchen degreasing.</p>
+                </div>
+
+                <!-- History Item 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm space-y-1.5 opacity-90">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-xs">ST</div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-800">Santosh Thakur • Carpenter</h4>
+                                <p class="text-[9px] text-slate-400">Completed on April 19, 2026</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-700">★ 4.9 Paid</span>
+                    </div>
+                    <p class="text-[9px] text-slate-500 bg-slate-50 p-1.5 rounded-lg">Fixed main bedroom wooden door hinge and lock alignment.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 5-Tab Bottom Navigation Bar -->
+        <div class="bg-white border-t border-amber-900/10 px-3 py-2 flex justify-between items-center z-10 shadow-lg">
+            <a href="dashboard.html" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition">
+                <span class="text-base">🏠</span>
+                <span class="text-[9px] font-medium mt-0.5">Home</span>
+            </a>
+            <a href="category.html?cat=plumbing" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition">
+                <span class="text-base">🛠️</span>
+                <span class="text-[9px] font-medium mt-0.5">Services</span>
+            </a>
+            <a href="role-select.html" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition" title="Smart ML Match">
+                <span class="text-base">🤖</span>
+                <span class="text-[9px] font-medium mt-0.5">ML Match</span>
+            </a>
+            <a href="booking.html" class="flex flex-col items-center text-[#3B2922]">
+                <span class="text-base">📅</span>
+                <span class="text-[9px] font-extrabold mt-0.5">Bookings</span>
+            </a>
+            <a href="profile.html" class="flex flex-col items-center text-slate-400 hover:text-[#3B2922] transition">
+                <span class="text-base">👤</span>
+                <span class="text-[9px] font-medium mt-0.5">Profile</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript to Handle Dynamic Booking Data & Tabs -->
+    <script>
+        // Check if a worker was recently booked from describe.html / payment.html
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookedName = urlParams.get('name');
+        
+        if(bookedName) {
+            document.getElementById('bk-name').innerText = bookedName;
+            document.getElementById('bk-initials').innerText = bookedName.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+        }
+
+        function switchTab(tab) {
+            const activeTab = document.getElementById('tab-active');
+            const historyTab = document.getElementById('tab-history');
+            const activeCont = document.getElementById('container-active');
+            const historyCont = document.getElementById('container-history');
+
+            if(tab === 'active') {
+                activeTab.className = "w-1/2 py-1.5 bg-white text-[#3B2922] rounded-lg shadow-sm cursor-pointer transition";
+                historyTab.className = "w-1/2 py-1.5 text-slate-500 hover:text-[#3B2922] cursor-pointer transition";
+                activeCont.classList.remove('hidden');
+                historyCont.classList.add('hidden');
+            } else {
+                historyTab.className = "w-1/2 py-1.5 bg-white text-[#3B2922] rounded-lg shadow-sm cursor-pointer transition";
+                activeTab.className = "w-1/2 py-1.5 text-slate-500 hover:text-[#3B2922] cursor-pointer transition";
+                historyCont.classList.remove('hidden');
+                activeCont.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

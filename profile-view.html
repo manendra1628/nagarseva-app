@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagarSeva - Professional Profile & Trust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-hover { transition: all 0.25s ease; }
+        .card-hover:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-slate-950 flex items-center justify-center min-h-screen font-sans">
+
+    <!-- Mobile Frame Box -->
+    <div class="w-[360px] h-[715px] bg-[#FAF8F5] text-slate-900 rounded-[40px] flex flex-col justify-between shadow-2xl border-4 border-slate-800 relative overflow-hidden">
+        
+        <!-- Top App Bar -->
+        <div class="px-5 pt-4 pb-2 flex items-center justify-between bg-[#FAF8F5] z-10 border-b border-amber-900/10">
+            <a href="javascript:history.back()" class="w-8 h-8 bg-white border border-amber-900/15 rounded-xl flex items-center justify-center text-slate-700 shadow-sm">
+                ←
+            </a>
+            <h1 class="text-base font-serif font-bold text-[#3B2922] tracking-tight">Trust & <span class="text-amber-800">Profile</span></h1>
+            <div class="w-8 h-8 bg-white border border-amber-900/10 rounded-full flex items-center justify-center shadow-sm">
+                <span class="text-xs">🛡️</span>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="px-5 overflow-y-auto hide-scrollbar space-y-4 py-3 flex-grow">
+            
+            <!-- Profile Card Header with Trust Badges -->
+            <div class="bg-white border border-amber-900/10 rounded-3xl p-4 shadow-sm text-center space-y-3">
+                <div class="flex justify-center relative">
+                    <div id="worker-avatar" class="w-16 h-16 rounded-2xl bg-amber-100 border-2 border-amber-900/20 flex items-center justify-center text-amber-900 font-bold text-xl shadow-md">
+                        AK
+                    </div>
+                    <span class="absolute -bottom-1 bg-emerald-600 text-white text-[9px] font-extrabold px-2 py-0.5 rounded-full shadow">
+                        ✓ Verified
+                    </span>
+                </div>
+                <div>
+                    <h2 id="worker-name" class="text-base font-bold text-[#3B2922]">Adarsh Kumar</h2>
+                    <p id="worker-role" class="text-xs text-slate-500 font-medium mt-0.5">Master Plumber</p>
+                    
+                    <!-- Trust Badges Row -->
+                    <div class="flex flex-wrap justify-center gap-1.5 mt-2">
+                        <span class="bg-emerald-50 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded-md border border-emerald-200">👮 Police Checked</span>
+                        <span class="bg-amber-50 text-amber-900 text-[9px] font-bold px-2 py-0.5 rounded-md border border-amber-200">★ 4.9 Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Worker Behavior & Performance Stats -->
+            <div class="grid grid-cols-3 gap-2">
+                <div class="bg-white border border-amber-900/10 rounded-2xl p-2.5 text-center shadow-sm">
+                    <p class="text-[9px] text-slate-400 font-semibold uppercase">On-Time</p>
+                    <p class="text-xs font-bold text-emerald-700 mt-0.5">99%</p>
+                </div>
+                <div class="bg-white border border-amber-900/10 rounded-2xl p-2.5 text-center shadow-sm">
+                    <p class="text-[9px] text-slate-400 font-semibold uppercase">Behavior</p>
+                    <p class="text-xs font-bold text-[#3B2922] mt-0.5">Polite ⭐</p>
+                </div>
+                <div class="bg-white border border-amber-900/10 rounded-2xl p-2.5 text-center shadow-sm">
+                    <p class="text-[9px] text-slate-400 font-semibold uppercase">Jobs Done</p>
+                    <p class="text-xs font-bold text-[#3B2922] mt-0.5">340+</p>
+                </div>
+            </div>
+
+            <!-- Recent Work Photos (Proof of Work) -->
+            <div class="space-y-1.5">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xs font-bold text-[#3B2922]">Recent Work Photos</h3>
+                    <span class="text-[9px] text-amber-800 font-bold">Real Proof</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="h-16 bg-amber-50 border border-amber-900/15 rounded-xl flex flex-col items-center justify-center text-center p-1 shadow-sm">
+                        <span class="text-sm">🔧</span>
+                        <span class="text-[8px] text-slate-600 font-bold mt-1">Pipe Repair</span>
+                    </div>
+                    <div class="h-16 bg-amber-50 border border-amber-900/15 rounded-xl flex flex-col items-center justify-center text-center p-1 shadow-sm">
+                        <span class="text-sm">🚰</span>
+                        <span class="text-[8px] text-slate-600 font-bold mt-1">Tank Fitting</span>
+                    </div>
+                    <div class="h-16 bg-amber-50 border border-amber-900/15 rounded-xl flex flex-col items-center justify-center text-center p-1 shadow-sm">
+                        <span class="text-sm">🧰</span>
+                        <span class="text-[8px] text-slate-600 font-bold mt-1">Leakage Fix</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Customer Reviews Section -->
+            <div class="space-y-2 pb-2">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xs font-bold text-[#3B2922]">Recent Customer Reviews</h3>
+                    <span class="text-[9px] text-emerald-700 font-bold">100% Verified</span>
+                </div>
+
+                <!-- Review 1 -->
+                <div class="bg-white border border-amber-900/10 rounded-2xl p-3 shadow-sm space-y-1">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[11px] font-bold text-[#3B2922]">Rameshwar Sahu</span>
+                        <span class="text-[9px] text-amber-700 font-bold">★★★★★</span>
+                    </div>
+                    <p class="text-[10px] text-slate-600 leading-snug">
+                        "Bhai ne ghar ka nal ka leakage sirf 15 minute mein theek kar diya. Bahut acche subhav ke hain aur kaam mein expert hain."
+                    </p>
+                    <span class="text-[8px] text-slate-400">Bhilai Sector 7 • 2 days ago</span>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white border border-amber-900/10 rounded-2xl p-3 shadow-sm space-y-1">
+                    <div class="flex justify-between items-center">
+                        <span class="text-[11px] font-bold text-[#3B2922]">Priya Deshmukh</span>
+                        <span class="text-[9px] text-amber-700 font-bold">★★★★★</span>
+                    </div>
+                    <p class="text-[10px] text-slate-600 leading-snug">
+                        "Very polite and professional service. On time arrival and reasonable charges."
+                    </p>
+                    <span class="text-[8px] text-slate-400">Smriti Nagar • 1 week ago</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Action Bar -->
+        <div class="bg-white border-t border-amber-900/10 px-5 py-3 flex items-center justify-between z-10 shadow-lg">
+            <div>
+                <p class="text-[9px] text-slate-400 font-semibold uppercase">Pricing</p>
+                <p class="text-xs font-bold text-[#3B2922]">₹300 / visit</p>
+            </div>
+            <a id="book-now-btn" href="describe.html" class="px-6 py-2.5 bg-[#3B2922] text-white rounded-xl font-bold text-xs shadow hover:bg-amber-900 transition">
+                Book Expert ➔
+            </a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript to Catch URL Parameters & Display Worker Info -->
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name') || 'Adarsh Kumar';
+        const role = urlParams.get('role') || 'Master Plumber';
+
+        document.getElementById('worker-name').innerText = name;
+        document.getElementById('worker-role').innerText = role;
+
+        // Generate dynamic initials for the avatar box
+        const initials = name.split(' ').map(n => n[0]).join('');
+        document.getElementById('worker-avatar').innerText = initials;
+
+        // Pass worker details to Booking button
+        document.getElementById('book-now-btn').href = `describe.html?worker=${encodeURIComponent(name)}&service=${encodeURIComponent(role)}`;
+    </script>
+</body>
+</html>
